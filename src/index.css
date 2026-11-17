@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'DM Sans', 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+html, body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: var(--font-sans), sans-serif;
+}
+
+.home {
+  background: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans), sans-serif;
+}
+
+p, span {
+  letter-spacing: -0.35px;
+}
+
+.feature-fg {
+  font-family: 'IBM Plex Mono', monospace !important;
+  letter-spacing: 0.04em;
+}
+
+/* Marquee animation from bubba.ai */
+@keyframes hero-feature-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-feature-marquee-track {
+  animation: hero-feature-marquee-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-feature-marquee-track {
+    animation: none;
+  }
+}
+
+/* Primary CTA shimmer gradient flow from bubba.ai */
+@keyframes gradient-flow {
+  0% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.gradient-flow-bg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #b181ff26, #b181ff8f, #b181ff8f, #b181ff26, transparent);
+  filter: blur(12px);
+  border-radius: 40px;
+  animation: gradient-flow 9s ease-in-out infinite;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.group:hover .gradient-flow-bg:before {
+  opacity: 0;
+}
+
+.default-gradient {
+  background: linear-gradient(135.17deg, #7D35F1 1.89%, #4452DB 29.39%, #2E3CED 56.89%, #005CBE 85.23%);
+}
+
+.hover-gradient {
+  background: linear-gradient(132.52deg, #B181FF 1.8%, #7481FF 31.79%, #4E5BF5 61.77%, #1264BA 92.67%);
+}
+
+/* Secondary glassmorphic CTA button from bubba.ai */
+.talk-to-bubba-btn {
+  background: linear-gradient(180deg, rgba(206, 194, 252, 0.08), rgba(64, 62, 85, 0.08));
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(241, 241, 241, 0.4);
+}
+
+.talk-to-bubba-btn:hover {
+  background: linear-gradient(180deg, rgba(206, 194, 252, 0.24), rgba(211, 200, 255, 0.192));
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(241, 241, 241, 0.4);
+}
+
+/* Unified Glassmorphism Card System across entire landing page */
+.card-gradient,
+.glass-morphism-card {
+  position: relative;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.04) 55%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.55),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 1px rgba(180, 140, 255, 0.15);
+  isolation: isolate;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.card-gradient:hover,
+.glass-morphism-card:hover {
+  border-color: rgba(255, 255, 255, 0.36);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.17) 0%,
+    rgba(255, 255, 255, 0.06) 55%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  box-shadow:
+    0 24px 55px rgba(125, 53, 241, 0.22),
+    inset 0 1px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 1px rgba(180, 140, 255, 0.24);
+}
+
+.glass-morphism-card:hover {
+  transform: translateY(-4px);
+}
+
+.border-gradient {
+  border: none;
+}
+
+.cert-card-gradient {
+  position: relative;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.04) 55%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 1px rgba(180, 140, 255, 0.15);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  isolation: isolate;
+}
+
+.cert-card-gradient:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.38);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.17) 0%,
+    rgba(255, 255, 255, 0.06) 55%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  box-shadow:
+    0 22px 48px rgba(125, 53, 241, 0.22),
+    inset 0 1px 2px rgba(255, 255, 255, 0.42);
+}
+
+.cert-border-gradient:before {
+  display: none;
+}
+
+.glass-subpanel {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(255, 255, 255, 0.025) 100%
+  );
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Packet animation for visual MQTT flow */
+@keyframes flow-dot {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    left: 96%;
+    opacity: 0;
+  }
+}
+
+.animate-flow-dot {
+  animation: flow-dot 1.4s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070709;
+}
+::-webkit-scrollbar-thumb {
+  background: #2c2c35;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7d35f1;
+}
