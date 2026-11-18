@@ -1,4 +1,5 @@
 import React from 'react';
+import InteractiveAtomLogo from './InteractiveAtomLogo';
 
 const HERO_FEATURES = [
   '24x7 BROKER AKTIF',
@@ -38,59 +39,49 @@ export default function HeroSection() {
       />
 
       <div className="relative z-10 px-4 md:px-8">
-        <div className="flex flex-col items-center justify-center pt-16 md:pt-16">
-          {/* Mascot Container with feathered radial mask & blurred backdrop (no visible frame edges) */}
-          <div className="relative mb-8 aspect-square w-[320px] md:w-[560px] flex items-center justify-center">
-            {/* Soft radial purple glow behind avatar to merge GIF halo smoothly with hero background */}
+        <div className="flex flex-col items-center justify-center pt-20 md:pt-20">
+          {/* Interactive Blue Atom Cloud Logo Container with seamless ambient glow */}
+          <div className="relative mb-6 md:mb-8 flex items-center justify-center">
+            {/* Soft radial blue-indigo glow behind atom cloud to blend naturally into hero background */}
             <div
-              className="pointer-events-none absolute inset-6 rounded-full opacity-75 blur-[85px]"
+              className="pointer-events-none absolute -inset-12 rounded-full opacity-80 blur-[95px]"
               style={{
                 background:
-                  'radial-gradient(circle, rgba(125, 53, 241, 0.45) 0%, rgba(56, 36, 130, 0.25) 45%, rgba(0, 0, 0, 0) 75%)',
+                  'radial-gradient(circle, rgba(59, 130, 246, 0.28) 0%, rgba(37, 99, 235, 0.20) 42%, rgba(0, 0, 0, 0) 76%)',
               }}
               aria-hidden="true"
             />
 
-            <img
-              alt="FiskomMQTT! mascot"
-              width={520}
-              height={530}
-              className="relative z-0 m-auto mt-0 h-[360px] w-full object-contain scale-[1.2] md:mt-[12px] md:h-[530px] md:w-[520px] md:scale-[1.26] mix-blend-lighten"
-              style={{
-                WebkitMaskImage:
-                  'radial-gradient(ellipse 66% 64% at 50% 45%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.58) 68%, rgba(0,0,0,0) 94%)',
-                maskImage:
-                  'radial-gradient(ellipse 66% 64% at 50% 45%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.58) 68%, rgba(0,0,0,0) 94%)',
-              }}
-              src="/bubba/bubba_gif.gif"
-            />
-
-            {/* Soft blurred elliptical vignette behind bottom fade & headline (replaces sharp rectangle edge) */}
-            <div
-              className="pointer-events-none absolute -bottom-10 left-1/2 -translate-x-1/2 z-[1] h-[62%] w-[135%] rounded-[50%] blur-2xl"
-              style={{
-                background:
-                  'radial-gradient(ellipse at center, rgba(0, 0, 0, 0.96) 28%, rgba(0, 0, 0, 0.72) 56%, rgba(0, 0, 0, 0) 82%)',
-              }}
-              aria-hidden="true"
-            />
+            <div className="relative z-[1]">
+              <InteractiveAtomLogo />
+            </div>
           </div>
 
-          {/* Headline + Subheadline + CTAs (exact overlap mt-[-135px] md:mt-[-200px]) */}
-          <div className="z-[2] mt-[-135px] max-w-4xl text-center md:mt-[-200px]">
-            <h1 className="mb-4 bg-gradient-to-b from-white to-[#BEBEBE] bg-clip-text pt-[20px] text-[36px] font-[400] leading-[40px] text-transparent md:mb-6 md:pt-0 md:text-[52px] md:leading-[56px]">
+          {/* Headline + Subheadline centered overlapping with the Blue Atom Cloud */}
+          <div className="pointer-events-none relative z-[5] mt-[-235px] max-w-4xl text-center sm:mt-[-285px] md:mt-[-330px]">
+            {/* Subtle radial dark scrim directly behind headline/subtitle for crisp contrast over blue orbits */}
+            <div
+              className="pointer-events-none absolute -inset-x-8 -top-6 bottom-24 -z-10 rounded-full blur-xl"
+              style={{
+                background:
+                  'radial-gradient(ellipse at center, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.28) 52%, rgba(0, 0, 0, 0) 78%)',
+              }}
+              aria-hidden="true"
+            />
+
+            <h1 className="mb-4 bg-gradient-to-b from-white to-[#BEBEBE] bg-clip-text pt-[20px] text-[36px] font-[400] leading-[40px] text-transparent drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] md:mb-6 md:pt-0 md:text-[52px] md:leading-[56px]">
               Meet FiskoMQTT,
               <br />
               Broker IoT untuk Tugas Kampus
             </h1>
 
-            <p className="mx-auto max-w-[370px] text-center text-lg font-[400] text-[#B2B2B2] md:mb-12 md:max-w-[430px] md:text-xl">
+            <p className="mx-auto max-w-[370px] text-center text-lg font-[400] text-[#D1D5DB] drop-shadow-[0_2px_16px_rgba(0,0,0,0.95)] md:mb-12 md:max-w-[430px] md:text-xl">
               Kirim, pantau &amp; uji data sensor — siap untuk kuliah &amp; skripsi. Cukup pakai{' '}
-              <span className="font-[600] text-[#f1f1f1]">mqtt.fiskomlab.com</span>
+              <span className="pointer-events-auto font-[600] text-[#f1f1f1]">mqtt.fiskomlab.com</span>
             </p>
 
             {/* Dual CTA Row */}
-            <div className="relative z-20 mb-10 flex w-full flex-row items-center justify-center gap-4 pt-12 md:pt-8">
+            <div className="pointer-events-auto relative z-20 mb-10 flex w-full flex-row items-center justify-center gap-4 pt-12 md:pt-8">
               {/* Mobile Secondary CTA */}
               <a
                 href="#contact-lab"
